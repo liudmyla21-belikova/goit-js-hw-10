@@ -60,7 +60,7 @@ button:hover {
   background-color: #6c8cff;
 }
 
-input {
+.input-text {
   width: 272px;
   height: 40px;
   font-family: 'Montserrat', sans-serif;
@@ -78,11 +78,11 @@ input {
   margin-right: 8px;
 }
 
-input:hover {
+.input-text:hover {
   border: 1px solid #000;
 }
 
-input:disabled {
+.input-text:disabled {
   background-color: #fafafa;
   border: 1px solid #808080;
   color: #808080;
