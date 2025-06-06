@@ -14,16 +14,16 @@ function handleSubmit(event) {
   const stateValue = state.value;
 
   createPromise(stateValue, delayValue)
-    .then(() => {
+    .then(result => {
       iziToast.success({
-        message: `✅ Fulfilled promise in ${delayValue}ms`,
+        message: result,
         closeOnClick: true,
         position: 'topRight',
       });
     })
-    .catch(() => {
+    .catch(error => {
       iziToast.error({
-        message: `❌ Rejected promise in ${delayValue}ms`,
+        message: error,
         closeOnClick: true,
         position: 'topRight',
       });
@@ -34,9 +34,9 @@ function createPromise(state, delay) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       if (state === 'fulfilled') {
-        resolve();
+        resolve(`✅ Fulfilled promise in ${delay}ms`);
       } else {
-        reject();
+        reject(`❌ Rejected promise in ${delay}ms`);
       }
     }, delay);
   });
