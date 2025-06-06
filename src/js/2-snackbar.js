@@ -28,6 +28,7 @@ function handleSubmit(event) {
         position: 'topRight',
       });
     });
+  delay.value = '';
 }
 
 function createPromise(state, delay) {
